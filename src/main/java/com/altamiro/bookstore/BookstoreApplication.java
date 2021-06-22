@@ -1,4 +1,4 @@
-package com.altamiro.boostore;
+package com.altamiro.bookstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
