@@ -7,16 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.altamiro.bookstore.domain.Categoria;
 import com.altamiro.bookstore.repositories.CategoriaRepository;
+import com.altamiro.bookstore.service.Exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
-	
+
 	@Autowired
 	private CategoriaRepository categoriaRepository;
-	
-	
+
 	public Categoria findById(Integer id) {
 		Optional<Categoria> obj = categoriaRepository.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 	}
 }
