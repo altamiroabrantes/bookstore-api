@@ -1,9 +1,12 @@
-package com.altamiro.bookstore.dtos;
+package com.bookstore.dtos;
 
-import com.altamiro.bookstore.domain.Categoria;
+import java.io.Serializable;
 
-public class CategoriaDTO {
+import com.bookstore.domain.Categoria;
+
+public class CategoriaDTO implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String nome;

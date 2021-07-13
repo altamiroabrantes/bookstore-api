@@ -1,14 +1,14 @@
-package com.altamiro.bookstore.service;
+package com.bookstore.service;
 
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.altamiro.bookstore.domain.Categoria;
-import com.altamiro.bookstore.domain.Livro;
-import com.altamiro.bookstore.repositories.CategoriaRepository;
-import com.altamiro.bookstore.repositories.LivroRepository;
+import com.bookstore.domain.Categoria;
+import com.bookstore.domain.Livro;
+import com.bookstore.repositories.CategoriaRepository;
+import com.bookstore.repositories.LivroRepository;
 
 @Service
 public class DBService {

@@ -1,4 +1,4 @@
-package com.altamiro.bookstore.service.Exceptions;
+package com.bookstore.service.Exceptions;
 
 public class DataIntegrityViolationException extends RuntimeException{
 

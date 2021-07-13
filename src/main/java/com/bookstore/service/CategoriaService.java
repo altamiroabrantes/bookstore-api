@@ -1,4 +1,4 @@
-package com.altamiro.bookstore.service;
+package com.bookstore.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import com.altamiro.bookstore.domain.Categoria;
-import com.altamiro.bookstore.dtos.CategoriaDTO;
-import com.altamiro.bookstore.repositories.CategoriaRepository;
-import com.altamiro.bookstore.service.Exceptions.ObjectNotFoundException;
+import com.bookstore.domain.Categoria;
+import com.bookstore.dtos.CategoriaDTO;
+import com.bookstore.repositories.CategoriaRepository;
+import com.bookstore.service.Exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
@@ -21,7 +21,7 @@ public class CategoriaService {
 	public Categoria findById(Integer id) {
 		Optional<Categoria> obj = categoriaRepository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
-				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
+				"Categoria não encontrada! Id: " + id + ", Tipo: " + Categoria.class.getName()));
 	}
 
 	public List<Categoria> findAll() {
@@ -45,7 +45,7 @@ public class CategoriaService {
 		try {
 			categoriaRepository.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
-			throw new com.altamiro.bookstore.service.Exceptions.DataIntegrityViolationException(
+			throw new com.bookstore.service.Exceptions.DataIntegrityViolationException(
 					"Categoria não pode ser deletada! Possui livros associados.");
 		}
 	}

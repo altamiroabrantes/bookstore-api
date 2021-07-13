@@ -1,4 +1,4 @@
-package com.altamiro.bookstore.resources;
+package com.bookstore.resources;
 
 import java.net.URI;
 import java.util.List;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.altamiro.bookstore.domain.Categoria;
-import com.altamiro.bookstore.dtos.CategoriaDTO;
-import com.altamiro.bookstore.service.CategoriaService;
+import com.bookstore.domain.Categoria;
+import com.bookstore.dtos.CategoriaDTO;
+import com.bookstore.service.CategoriaService;
 
 @RestController
 @RequestMapping(value = "/categorias")
@@ -43,7 +43,7 @@ public class CategoriaResource {
 	@PostMapping
 	public ResponseEntity<Categoria> create(@RequestBody Categoria obj){
 		obj = service.create(obj);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 	

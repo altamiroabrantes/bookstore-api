@@ -1,4 +1,4 @@
-package com.altamiro.bookstore.resources.exceptions;
+package com.bookstore.resources.exceptions;
 
 public class StandardError {
 

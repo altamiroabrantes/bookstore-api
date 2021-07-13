@@ -1,4 +1,4 @@
-package com.altamiro.bookstore.domain;
+package com.bookstore.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
