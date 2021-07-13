@@ -6,6 +6,10 @@ public class StandardError {
 	private Integer status;
 	private String error;
 
+	public StandardError() {
+		super();
+	}
+
 	public StandardError(Long timestamp, Integer status, String error) {
 		super();
 		this.timestamp = timestamp;
